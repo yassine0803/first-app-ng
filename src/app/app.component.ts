@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'mon-premier-projet';
   isAuth = false;
-
+  appareil1 = "televesion";
+  appareil2 = "laptop";
+  appareil3 = "phone"
   constructor() {
    setTimeout(
     () => {

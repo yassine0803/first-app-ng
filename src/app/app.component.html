@@ -338,9 +338,9 @@
 
   </div>
 <ul class="list-group mt-5">
-  <app-appareil></app-appareil>
-  <app-appareil></app-appareil>
-  <app-appareil></app-appareil>
+  <app-appareil [appareilName]="appareil1"></app-appareil>
+  <app-appareil [appareilName]="appareil2"></app-appareil>
+  <app-appareil [appareilName]="appareil3"></app-appareil>
 </ul>
 <button class="btn btn-success mt-2" 
         [disabled]="!isAuth" 
