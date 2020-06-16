@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'mon-premier-projet';
   isAuth = false;
+  lastUpdate = new Date();
   appareils = [
     {
       name: "televesion",
