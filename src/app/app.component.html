@@ -338,7 +338,7 @@
 
   </div>
   <h2 class="mt-5">Mes Appareils</h2>
-  <p>Mis a jour : {{lastUpdate | date: 'yMMMMEEEEd' | uppercase}}</p>
+  <p>Mis a jour : {{lastUpdate | async | date: 'yMMMMEEEEd' | uppercase}}</p>
 <ul class="list-group mt-3">
   <app-appareil *ngFor="let appareil of appareils " [appareilName]="appareil.name" [appareilStatus]="appareil.status"></app-appareil>
   </ul>
