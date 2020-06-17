@@ -4,7 +4,9 @@
             }">
 
     <h4 [ngStyle]="{color: getColor()}">{{appareilName}} -- Status: {{getStatus()}}</h4>
-    <div class="">
+    
+    <div class="d-flex">
+        <a [routerLink]="[id]" class="mr-2">Détail</a>
         <button class="btn btn-success p-0 mr-1" (click)="onAllumeUn()" [disabled]="appareilStatus ==='allumé'">ON</button>
         <button class="btn btn-danger p-0 ml-1" (click)="onEteintUn()" [disabled]="appareilStatus ==='éteint'">OFF</button>
     </div>
