@@ -340,7 +340,12 @@
   <h2 class="mt-5">Mes Appareils</h2>
   <p>Mis a jour : {{lastUpdate | async | date: 'yMMMMEEEEd' | uppercase}}</p>
 <ul class="list-group mt-3">
-  <app-appareil *ngFor="let appareil of appareils " [appareilName]="appareil.name" [appareilStatus]="appareil.status"></app-appareil>
+  <app-appareil 
+   *ngFor="let appareil of appareils; let i = index "
+   [indexOfAppareil] = "i"
+   [appareilName]="appareil.name" 
+   [appareilStatus]="appareil.status">
+  </app-appareil>
   </ul>
 
 <div class="d-flex mt-2">
