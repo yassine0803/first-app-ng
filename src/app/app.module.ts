@@ -18,7 +18,9 @@ const appRoutes: Routes = [
   {path: 'appareils', component: AppareilViewComponent},
   {path: 'appareils/:id', component: SingleAppareilComponent},
   {path: 'auth', component: AuthComponent},
-  {path: '', component: AppareilViewComponent}
+  {path: '', component: AppareilViewComponent},
+  {path:'not-found', component: FourOhFourComponent},
+  {path:'**', redirectTo: '/not-found'}
   
 ];
 @NgModule({
