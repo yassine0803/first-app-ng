@@ -12,6 +12,7 @@ import { AppareilViewComponent } from './appareil-view/appareil-view.component'
 import { Routes, RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 
 const appRoutes: Routes = [
   {path: 'appareils', component: AppareilViewComponent},
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     MonPremierComponent,
     AppareilComponent,
     AuthComponent,
-    AppareilViewComponent
+    AppareilViewComponent,
+    FourOhFourComponent
   ],
   imports: [
     BrowserModule,
