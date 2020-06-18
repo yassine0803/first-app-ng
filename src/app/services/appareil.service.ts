@@ -6,23 +6,7 @@ import { Injectable } from '@angular/core';
 
 export class AppareilService {
   appareilSubject = new Subject<any[]>();
-    private appareils = [
-        {
-          id:1,
-          name: "televesion",
-          status: 'allumé'
-        },
-        {
-          id:2,
-          name: "laptop",
-          status: 'allumé'
-        },
-        {
-          id:3,
-          name: "phone",
-          status: 'éteint'
-        }
-      ];
+    private appareils = [];
       constructor(private httpClient: HttpClient){}
       emitAppareilSubject(){
         this.appareilSubject.next(this.appareils.slice());
@@ -71,7 +55,7 @@ export class AppareilService {
 
     saveAppareilsToServer(){
       this.httpClient
-        .post('https://http-client-demo-b72cd.firebaseio.com/appareils.json', this.appareils )
+        .put('https://http-client-demo-b72cd.firebaseio.com/appareils.json', this.appareils )
         .subscribe(
           ()=>{
             console.log('enregistrement terminé'),
@@ -80,5 +64,19 @@ export class AppareilService {
             }
           }
         );
+    }
+
+    getAppareilsFromServer(){
+      this.httpClient
+        .get<any[]>('https://http-client-demo-b72cd.firebaseio.com/appareils.json')
+        .subscribe(
+          (res)=>{
+            this.appareils = res;
+            this.emitAppareilSubject();
+          },
+          (error)=>{
+            console.log('Erreur de chargement'+ error);
+          }
+        )
     }
 }
