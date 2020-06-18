@@ -6,7 +6,7 @@
         </div>
         <div class="form-group">
             <label for="firstName">Nom</label>
-            <input type="text" id="lastName" class="form-control" formControlName="lasttName">
+            <input type="text" id="lastName" class="form-control" formControlName="lastName">
         </div>
         <div class="form-group">
             <label for="firstName">Email</label>
@@ -14,11 +14,11 @@
         </div>
         <div class="form-group">
             <label for="DrinkPreference">quelle boisson préférez-vous?</label>
-            <select class="form-control" id="drinkPreference" formControlName="drinkPrefence">
+            <select class="form-control" id="drinkPreference" formControlName="drinkPreference">
                 <option value="Coca">Coca</option>
                 <option value="Pepsi">Pepsi</option>
             </select>
         </div>
-        <button class="btn btn-primary" type="submit">Soumettre</button>
+        <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Soumettre</button>
     </form>
 </div>
