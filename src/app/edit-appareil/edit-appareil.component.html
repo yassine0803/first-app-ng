@@ -1,1 +1,24 @@
-<p>edit-appareil works!</p>
+<div class="row mt-3">
+    <div class="col-sm-8 col-sm-offset-2">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="form-group">
+                <label for="name">
+                    Nom de la'appreil
+                </label>
+                <input type="text" id="name" class="form-control" name="name" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="status">
+                    Etat de l'appreil
+                </label>
+                <select name="status" id="status" class="form-control" name="status" ngModel>
+                    <option value="allumé">Allumé</option>
+                    <option value="éteint">Eteint</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">
+                Enregester
+            </button>
+        </form>
+    </div>
+</div>

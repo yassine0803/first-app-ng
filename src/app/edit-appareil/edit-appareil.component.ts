@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-appareil',
@@ -11,5 +12,7 @@ export class EditAppareilComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit(from: NgForm){
+    console.log(from.value);
+  }
 }
